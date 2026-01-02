@@ -30,6 +30,8 @@ const useGasPrice = (apiKey) => {
 
   useEffect(() => {
     isMountedRef.current = true;
+    refreshMsRef.current = baseRefreshMs;
+    setCountdown(Math.round(baseRefreshMs / 1000));
 
     const getRefreshSeconds = () => Math.round(refreshMsRef.current / 1000);
 
@@ -119,7 +121,7 @@ const useGasPrice = (apiKey) => {
         abortControllerRef.current.abort();
       }
     };
-  }, [apiKey]);
+  }, [apiKey, baseRefreshMs]);
 
   const status = error ? "error" : gasPrices ? "ready" : "loading";
 
