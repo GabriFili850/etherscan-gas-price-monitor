@@ -2,6 +2,7 @@ import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import axios from "axios";
 import GasPrice from "../GasPrice";
+import { MISSING_API_KEY_MESSAGE } from "../GasPrice/constants";
 
 jest.mock("axios");
 
@@ -84,9 +85,7 @@ describe("GasPrice component", () => {
     delete process.env.REACT_APP_ETHERSCAN_API_KEY;
     render(<GasPrice />);
 
-    expect(
-      screen.getByText(/Missing Etherscan API key/i)
-    ).toBeInTheDocument();
+    expect(screen.getByText(MISSING_API_KEY_MESSAGE)).toBeInTheDocument();
     expect(axios.get).not.toHaveBeenCalled();
   });
 });

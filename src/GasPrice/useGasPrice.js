@@ -1,8 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
-
-const REFRESH_INTERVAL_MS = 15000; // 15 seconds
-const MAX_BACKOFF_MS = 60000; // 60 seconds
+import {
+  GENERIC_FETCH_ERROR_MESSAGE,
+  MAX_BACKOFF_MS,
+  MISSING_API_KEY_MESSAGE,
+  REFRESH_INTERVAL_MS,
+} from "./constants";
 
 const useGasPrice = (apiKey) => {
   const [gasPrice, setGasPrice] = useState(null);
@@ -15,10 +18,10 @@ const useGasPrice = (apiKey) => {
   useEffect(() => {
     isMountedRef.current = true;
 
+    const getRefreshSeconds = () => Math.round(refreshMsRef.current / 1000);
+
     if (!apiKey) {
-      setError(
-        "Missing Etherscan API key. Set REACT_APP_ETHERSCAN_API_KEY in .env.local."
-      );
+      setError(MISSING_API_KEY_MESSAGE);
       return () => {
         isMountedRef.current = false;
       };
@@ -62,7 +65,7 @@ const useGasPrice = (apiKey) => {
         }
         console.error("Error fetching gas price:", error);
         if (isMountedRef.current) {
-          setError(error?.message || "Error fetching gas price");
+          setError(error?.message || GENERIC_FETCH_ERROR_MESSAGE);
         }
         refreshMsRef.current = Math.min(
           MAX_BACKOFF_MS,
@@ -70,7 +73,7 @@ const useGasPrice = (apiKey) => {
         );
       } finally {
         if (isMountedRef.current) {
-          setCountdown(Math.round(refreshMsRef.current / 1000));
+          setCountdown(getRefreshSeconds());
         }
       }
     };
@@ -79,7 +82,7 @@ const useGasPrice = (apiKey) => {
       setCountdown((prevCountdown) => {
         if (prevCountdown <= 1) {
           fetchGasPrice();
-          return Math.round(refreshMsRef.current / 1000);
+          return getRefreshSeconds();
         }
         return prevCountdown - 1;
       });

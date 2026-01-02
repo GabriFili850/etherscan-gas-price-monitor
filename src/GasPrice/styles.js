@@ -1,11 +1,6 @@
-import styled from "styled-components";
+import { CenteredColumn } from "../sharedStyles";
 
-export const GasPriceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+export const GasPriceContainer = CenteredColumn;
 
 export const GasPriceText = styled.p`
   font-size: 1.5rem;

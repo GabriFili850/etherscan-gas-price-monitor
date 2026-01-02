@@ -1,10 +1,7 @@
 import styled from "styled-components";
+import { CenteredColumn } from "./sharedStyles";
 
-export const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+export const AppContainer = styled(CenteredColumn)`
   min-height: 100vh;
   background-color: #282c34;
   color: white;
