@@ -5,3 +5,6 @@ export const MISSING_API_KEY_MESSAGE =
   "Missing Etherscan API key. Set REACT_APP_ETHERSCAN_API_KEY in .env.local.";
 
 export const GENERIC_FETCH_ERROR_MESSAGE = "Error fetching gas price";
+
+export const ETHERSCAN_API_BASE_URL = "https://api.etherscan.io/v2/api";
+export const ETHERSCAN_CHAIN_ID = "1";

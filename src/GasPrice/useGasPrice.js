@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import {
+  ETHERSCAN_API_BASE_URL,
+  ETHERSCAN_CHAIN_ID,
   GENERIC_FETCH_ERROR_MESSAGE,
   MAX_BACKOFF_MS,
   MISSING_API_KEY_MESSAGE,
@@ -35,8 +37,9 @@ const useGasPrice = (apiKey) => {
       abortControllerRef.current = controller;
 
       try {
+        const requestUrl = `${ETHERSCAN_API_BASE_URL}?chainid=${ETHERSCAN_CHAIN_ID}&module=proxy&action=eth_gasPrice&apikey=${apiKey}`;
         const response = await axios.get(
-          `https://api.etherscan.io/api?module=proxy&action=eth_gasPrice&apikey=${apiKey}`,
+          requestUrl,
           { signal: controller.signal }
         );
         const result = response.data?.result;
