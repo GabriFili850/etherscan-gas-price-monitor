@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import axios from "axios";
-import GasPriceContainer from "../GasPrice";
+import GasPriceContainer from "../components/GasPriceContainer";
 import { MISSING_API_KEY_MESSAGE } from "../GasPrice/constants";
 
 jest.mock("axios");

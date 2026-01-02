@@ -9,7 +9,7 @@ import {
   GasPriceUnit,
   GasPriceValue,
   StatusText,
-} from "./styles";
+} from "../GasPrice/styles";
 
 const GasPriceView = ({ gasPrices, countdown, error, status = "loading" }) => {
   return (

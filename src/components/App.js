@@ -1,6 +1,6 @@
 import React from "react";
-import GasPriceContainer from "./GasPrice";
-import EthereumLogo from "./images/ethereum-logo.svg";
+import GasPriceContainer from "./GasPriceContainer";
+import EthereumLogo from "../assets/images/ethereum-logo.svg";
 import {
   AppContainer,
   AppHeader,
@@ -11,7 +11,7 @@ import {
   GlobalStyle,
   LogoBadge,
   LogoMark,
-} from "./styles";
+} from "./App.styles";
 
 function App() {
   return (

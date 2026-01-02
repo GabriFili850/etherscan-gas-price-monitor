@@ -1,5 +1,5 @@
 import React from "react";
-import useGasPrice from "./useGasPrice";
+import useGasPrice from "../GasPrice/useGasPrice";
 import GasPriceView from "./GasPriceView";
 
 const GasPriceContainer = () => {

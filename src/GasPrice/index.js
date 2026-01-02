@@ -1,2 +1,2 @@
-export { default } from "./GasPriceContainer";
-export { default as GasPriceView } from "./GasPriceView";
+export { default } from "../components/GasPriceContainer";
+export { default as GasPriceView } from "../components/GasPriceView";
