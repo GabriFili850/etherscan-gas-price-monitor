@@ -18,6 +18,9 @@
     "prettier": "^2.8.7",
     "sass": "^1.60.0"
   },
+  "engines": {
+    "node": ">=22"
+  },
   "overrides": {
     "@babel/core": "^7.22.0"
   },
