@@ -1,7 +1,7 @@
 import React from "react";
 import { render, screen, act } from "@testing-library/react";
 import axios from "axios";
-import GasPriceContainer from "../components/GasPriceContainer";
+import GasPriceController from "../controllers/GasPriceController";
 import { MISSING_API_KEY_MESSAGE } from "../GasPrice/constants";
 
 jest.mock("axios");
@@ -35,7 +35,7 @@ describe("GasPrice component", () => {
       },
     });
 
-    render(<GasPriceContainer />);
+    render(<GasPriceController />);
 
     expect(await screen.findByText(/Low: 10.00 Gwei/i)).toBeInTheDocument();
     expect(screen.getByText(/Average: 20.00 Gwei/i)).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe("GasPrice component", () => {
   test("renders an error when the request fails", async () => {
     axios.get.mockRejectedValue(new Error("Network error"));
 
-    render(<GasPriceContainer />);
+    render(<GasPriceController />);
 
     const errorElement = await screen.findByText(/Network error/i);
     expect(errorElement).toBeInTheDocument();
@@ -67,7 +67,7 @@ describe("GasPrice component", () => {
         },
       });
 
-    render(<GasPriceContainer />);
+    render(<GasPriceController />);
 
     await act(async () => {
       await Promise.resolve();
@@ -90,7 +90,7 @@ describe("GasPrice component", () => {
 
   test("shows a missing API key message", () => {
     delete process.env.REACT_APP_ETHERSCAN_API_KEY;
-    render(<GasPriceContainer />);
+    render(<GasPriceController />);
 
     expect(screen.getByText(MISSING_API_KEY_MESSAGE)).toBeInTheDocument();
     expect(axios.get).not.toHaveBeenCalled();

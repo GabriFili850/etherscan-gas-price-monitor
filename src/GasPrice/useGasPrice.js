@@ -9,7 +9,7 @@ import {
   MISSING_API_KEY_MESSAGE,
 } from "./constants";
 
-const useGasPrice = (apiKey) => {
+const useGasPrice = ({ apiKey }) => {
   const resolveRefreshIntervalMs = () => {
     const rawValue = process.env.REACT_APP_REFRESH_INTERVAL_MS;
     const parsed = Number.parseInt(rawValue, 10);

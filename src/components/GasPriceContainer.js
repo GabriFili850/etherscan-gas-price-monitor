@@ -1,11 +1,7 @@
 import React from "react";
-import useGasPrice from "../GasPrice/useGasPrice";
 import GasPriceView from "./GasPriceView";
 
-const GasPriceContainer = () => {
-  const apiKey = process.env.REACT_APP_ETHERSCAN_API_KEY;
-  const { gasPrices, countdown, error, status } = useGasPrice(apiKey);
-
+const GasPriceContainer = ({ gasPrices, countdown, error, status }) => {
   return (
     <GasPriceView
       gasPrices={gasPrices}

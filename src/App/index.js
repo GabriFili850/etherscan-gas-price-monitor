@@ -1,5 +1,5 @@
 import React from "react";
-import GasPriceContainer from "./GasPriceContainer";
+import GasPriceContainer from "../components/GasPriceContainer";
 import EthereumLogo from "../assets/images/ethereum-logo.svg";
 import {
   AppContainer,
@@ -11,16 +11,16 @@ import {
   GlobalStyle,
   LogoBadge,
   LogoMark,
-} from "./App.styles";
+} from "./styles";
 
-function App() {
+function App({ gasPrices, countdown, error, status }) {
   return (
     <AppContainer>
       <GlobalStyle />
       <AppShell>
         <AppHeader>
           <LogoBadge>
-            <LogoMark src={EthereumLogo} alt="Ethereum Logo" />
+            <LogoMark src={EthereumLogo} alt='Ethereum Logo' />
           </LogoBadge>
           <AppHeaderMeta>
             <AppTitle>Etherscan Gas Oracle</AppTitle>
@@ -29,7 +29,12 @@ function App() {
             </AppSubtitle>
           </AppHeaderMeta>
         </AppHeader>
-        <GasPriceContainer />
+        <GasPriceContainer
+          gasPrices={gasPrices}
+          countdown={countdown}
+          error={error}
+          status={status}
+        />
       </AppShell>
     </AppContainer>
   );
