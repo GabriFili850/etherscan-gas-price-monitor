@@ -35,7 +35,7 @@ export const AppContainer = styled.div`
   background: linear-gradient(180deg, #f6f9ff 0%, #eef2f8 45%, #f6f9ff 100%);
   color: #0f1c2e;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
 
   &::before,
   &::after {
