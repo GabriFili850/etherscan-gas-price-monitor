@@ -1,5 +1,5 @@
 {
-  "name": "etherscan-gas-price",
+  "name": "marketpulse-dashboard",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

@@ -26,9 +26,9 @@ function App({ gasState, ethState }) {
             <LogoMark src={EthereumLogo} alt='Ethereum Logo' />
           </LogoBadge>
           <AppHeaderMeta>
-            <AppTitle>Etherscan Gas Oracle</AppTitle>
+            <AppTitle>MarketPulse Dashboard</AppTitle>
             <AppSubtitle>
-              Low, average, and high estimates from the Etherscan oracle.
+              Ethereum gas and price snapshot, built to grow across chains.
             </AppSubtitle>
           </AppHeaderMeta>
         </AppHeader>

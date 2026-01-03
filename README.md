@@ -1,5 +1,5 @@
-# Etherscan Gas Price Monitor
-This React application displays low, average, and high gas prices on the Ethereum network in real time, along with a 12‑month ETH price chart. The app fetches gas oracle data from the Etherscan API and uses CoinGecko for the ETH price history, updating on a configurable interval. This tool can be useful for Ethereum users who want to keep track of gas prices to optimize transaction costs.
+# MarketPulse Dashboard
+MarketPulse Dashboard is a React dashboard that displays low, average, and high gas prices on the Ethereum network in real time, along with a 12‑month ETH price chart. The app fetches gas oracle data from the Etherscan API and uses CoinGecko for the ETH price history, updating on a configurable interval. This tool can be useful for Ethereum users who want to keep track of gas prices to optimize transaction costs.
 
 ## Features
 Displays low, average, and high gas prices in Gwei format
@@ -13,13 +13,13 @@ Responsive and mobile-friendly design
 
 
 ## Setup
-To set up the Etherscan Gas Price Monitor, follow these steps:
+To set up MarketPulse Dashboard, follow these steps:
 
 ### Clone the repository:
 
-git clone https://github.com/GabriFili850/etherscan-gas-price-monitor.git
+git clone https://github.com/GabriFili850/marketpulse-dashboard.git
 
-cd etherscan-gas-price-monitor
+cd marketpulse-dashboard
 
 ### Install the required dependencies:
 
@@ -43,7 +43,7 @@ Replace YOUR_ETHERSCAN_API_KEY with your actual Etherscan API key. You can obtai
 
 `npm start`
 
-The Etherscan Gas Price Monitor app should now be running on http://localhost:3000.
+The MarketPulse Dashboard app should now be running on http://localhost:3000.
 
 ### Technologies Used
 React
@@ -59,8 +59,8 @@ Create React App
 Netlify (for deployment)
 
 ## Live Demo
-Etherscan Gas Price Monitor is deployed on Netlify and can be accessed through this link:
+MarketPulse Dashboard is deployed on Netlify and can be accessed through this link:
 
-https://etherscan-gas-price-monitor.netlify.app
+https://marketpulse-dashboard.netlify.app
 
 Feel free to visit the live demo to see the app in action without needing to set up the project locally.
