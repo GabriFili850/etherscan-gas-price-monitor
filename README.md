@@ -1,14 +1,12 @@
 # MarketPulse Dashboard
-MarketPulse Dashboard is a React dashboard that displays low, average, and high gas prices on the Ethereum network in real time, along with a 12‑month ETH price chart. The app fetches gas oracle data from the Etherscan API and uses CoinGecko for the ETH price history, updating on a configurable interval. This tool can be useful for Ethereum users who want to keep track of gas prices to optimize transaction costs.
+MarketPulse Dashboard is a React dashboard that displays Ethereum price and gas data in real time, along with a 12‑month ETH price chart. The app fetches gas oracle data from the Etherscan API and uses CoinGecko for the ETH price history, updating on a configurable interval. This tool can be useful for Ethereum users who want to keep track of gas prices to optimize transaction costs.
 
 ## Features
-Displays low, average, and high gas prices in Gwei format
-Shows a chart of the current ETH price in USD
-
-Automatically refreshes gas price data every 15 seconds
-
-Countdown timer showing the time remaining until the next refresh
-
+Shows Ethereum price in real time
+Shows a 12-month ETH price chart in USD
+Displays low/average/high gas prices in real time
+Automatically refreshes price and gas data on a configurable interval
+Countdown timer showing time remaining until the next refresh
 Responsive and mobile-friendly design
 
 

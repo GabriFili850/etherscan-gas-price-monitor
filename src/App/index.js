@@ -28,7 +28,7 @@ function App({ gasState, ethState }) {
           <AppHeaderMeta>
             <AppTitle>MarketPulse Dashboard</AppTitle>
             <AppSubtitle>
-              Ethereum gas and price snapshot, built to grow across chains.
+              Ethereum price and gas, built to grow across chains.
             </AppSubtitle>
           </AppHeaderMeta>
         </AppHeader>
